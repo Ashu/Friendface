@@ -14,6 +14,7 @@
 		5441F9AA243C9B3E00A4EAE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5441F9A9243C9B3E00A4EAE7 /* Assets.xcassets */; };
 		5441F9AD243C9B3E00A4EAE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5441F9AB243C9B3E00A4EAE7 /* LaunchScreen.storyboard */; };
 		5441F9B8243C9B3E00A4EAE7 /* FriendfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5441F9B7243C9B3E00A4EAE7 /* FriendfaceTests.swift */; };
+		547E88C1243DE033000023E2 /* JSONDecoder-Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547E88C0243DE033000023E2 /* JSONDecoder-Remote.swift */; };
 		9022D4AA243CAE7100C8C280 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9022D4A9243CAE7100C8C280 /* Friend.swift */; };
 		9022D4AC243CAEC600C8C280 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9022D4AB243CAEC600C8C280 /* Connection.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		5441F9B3243C9B3E00A4EAE7 /* FriendfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FriendfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5441F9B7243C9B3E00A4EAE7 /* FriendfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendfaceTests.swift; sourceTree = "<group>"; };
 		5441F9B9243C9B3F00A4EAE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		547E88C0243DE033000023E2 /* JSONDecoder-Remote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder-Remote.swift"; sourceTree = "<group>"; };
 		9022D4A9243CAE7100C8C280 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		9022D4AB243CAEC600C8C280 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +67,7 @@
 		5441F994243C9B3000A4EAE7 = {
 			isa = PBXGroup;
 			children = (
+				547E88C0243DE033000023E2 /* JSONDecoder-Remote.swift */,
 				5441F99F243C9B3000A4EAE7 /* Friendface */,
 				5441F9B6243C9B3E00A4EAE7 /* FriendfaceTests */,
 				5441F99E243C9B3000A4EAE7 /* Products */,
@@ -206,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				547E88C1243DE033000023E2 /* JSONDecoder-Remote.swift in Sources */,
 				5441F9A5243C9B3000A4EAE7 /* ViewController.swift in Sources */,
 				5441F9A1243C9B3000A4EAE7 /* AppDelegate.swift in Sources */,
 				9022D4AC243CAEC600C8C280 /* Connection.swift in Sources */,

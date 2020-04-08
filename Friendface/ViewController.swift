@@ -20,25 +20,17 @@ class ViewController: UITableViewController, UISearchResultsUpdating {
 		search.searchBar.placeholder = "Find a friend"
 		search.searchResultsUpdater = self
 		navigationItem.searchController = search
-        DispatchQueue.global().async {
-            do {
-                let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json")!
-                let data = try Data(contentsOf: url)
-                
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .iso8601
-                
-                let downloadedFriends = try decoder.decode([Friend].self, from: data)
-                
-                DispatchQueue.main.async {
-                    self.friends = downloadedFriends
-					self.filteredFriends = downloadedFriends
-                    self.tableView.reloadData()
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
+        
+		let decoder = JSONDecoder()
+		decoder.dateDecodingStrategy = .iso8601
+		
+		let url = "https://www.hackingwithswift.com/samples/friendface.json"
+		
+		decoder.decode([Friend].self, fromUL: url) { friends in
+			self.friends = friends
+			self.filteredFriends = friends
+			self.tableView.reloadData()
+		}
 	}
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
