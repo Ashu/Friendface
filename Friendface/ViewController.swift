@@ -50,22 +50,13 @@ class ViewController: UITableViewController, UISearchResultsUpdating {
         let friend = filteredFriends[indexPath.row]
         
         cell.textLabel?.text = friend.name
-        cell.detailTextLabel?.text = friend.friends.map{ $0.name }.joined(separator: ", ")
+        cell.detailTextLabel?.text = friend.friendList
         
         return cell
     }
 	
 	func updateSearchResults(for searchController: UISearchController) {
-		if let text = searchController.searchBar.text, text.count > 0 {
-			filteredFriends = friends.filter {
-				$0.name.contains(text)
-					|| $0.company.contains(text)
-					|| $0.address.contains(text)
-			}
-		} else {
-			filteredFriends = friends
-		}
-		
+		filteredFriends = friends.matching(searchController.searchBar.text)
 		tableView.reloadData()
 	}
 }
