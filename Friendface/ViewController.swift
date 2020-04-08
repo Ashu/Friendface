@@ -8,48 +8,25 @@
 
 import UIKit
 
-class ViewController: UITableViewController, UISearchResultsUpdating {
-    var friends = [Friend]()
-	var filteredFriends = [Friend]()
-
+class ViewController: UITableViewController {
+	let dataSource = FriendDataSource()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        
+    
+		dataSource.dataChanged = { [weak self] in
+			self?.tableView.reloadData()
+		}
+		
+		dataSource.fetch("https://www.hackingwithswift.com/samples/friendface.json")
+		tableView.dataSource = dataSource
+		
 		let search = UISearchController(searchResultsController: nil)
 		search.obscuresBackgroundDuringPresentation = false
 		search.searchBar.placeholder = "Find a friend"
-		search.searchResultsUpdater = self
+		search.searchResultsUpdater = dataSource
 		navigationItem.searchController = search
         
-		let decoder = JSONDecoder()
-		decoder.dateDecodingStrategy = .iso8601
-		
-		let url = "https://www.hackingwithswift.com/samples/friendface.json"
-		
-		decoder.decode([Friend].self, fromUL: url) { friends in
-			self.friends = friends
-			self.filteredFriends = friends
-			self.tableView.reloadData()
-		}
-	}
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredFriends.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let friend = filteredFriends[indexPath.row]
-        
-        cell.textLabel?.text = friend.name
-        cell.detailTextLabel?.text = friend.friendList
-        
-        return cell
-    }
-	
-	func updateSearchResults(for searchController: UISearchController) {
-		filteredFriends = friends.matching(searchController.searchBar.text)
-		tableView.reloadData()
 	}
 }
 
