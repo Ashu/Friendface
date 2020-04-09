@@ -69,8 +69,6 @@
 		5441F994243C9B3000A4EAE7 = {
 			isa = PBXGroup;
 			children = (
-				547E88C0243DE033000023E2 /* JSONDecoder-Remote.swift */,
-				547E88C2243DE40B000023E2 /* FriendDataSource.swift */,
 				5441F99F243C9B3000A4EAE7 /* Friendface */,
 				5441F9B6243C9B3E00A4EAE7 /* FriendfaceTests */,
 				5441F99E243C9B3000A4EAE7 /* Products */,
@@ -94,6 +92,8 @@
 				5441F9A4243C9B3000A4EAE7 /* ViewController.swift */,
 				9022D4A9243CAE7100C8C280 /* Friend.swift */,
 				9022D4AB243CAEC600C8C280 /* Connection.swift */,
+				547E88C0243DE033000023E2 /* JSONDecoder-Remote.swift */,
+				547E88C2243DE40B000023E2 /* FriendDataSource.swift */,
 				5441F9A6243C9B3000A4EAE7 /* Main.storyboard */,
 				5441F9A9243C9B3E00A4EAE7 /* Assets.xcassets */,
 				5441F9AB243C9B3E00A4EAE7 /* LaunchScreen.storyboard */,
